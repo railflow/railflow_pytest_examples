@@ -44,7 +44,7 @@ So a sample test case looks like:
 	
 	@pytest.mark.railflow(author="Bob")
 	def test_sample():
-	    """
+      """
       This is a sample test
       """
       assert 1 == 1
@@ -73,11 +73,7 @@ Function level
 
 	import pytest
 
-	@pytest.mark.railflow(author='Bob',  description='Addition of two numbers',
-                    jira_id=100231, test_path='test_calculation.py', 
-                    case_fields="filedA1", result_fields="fieldB1",
-                    id_mappings="map id1", case_type="test case", case_priority="important",
-                    email="test@mail.com") # here email is a not defined parameter
+	@pytest.mark.railflow(author='Bob',  description='Addition of two numbers', jira_id=100231, test_path='test_calculation.py', case_fields="filedA1", result_fields="fieldB1", id_mappings="map id1", case_type="test case", case_priority="important")
 	def test_add():
 		  """
 		  Add two numbers
@@ -101,9 +97,9 @@ Function level
 	@pytest.mark.railflow(description='modulus of two numbers')
 	@pytest.mark.railflow(author='Bob123')
 	def test_add():
-		  """
-		  Add two numbers
-		  """
-		  a = 2 + 7
-		  assert a == 9
-   
+        """
+        Add two numbers
+        """
+        a = 2 + 7
+        assert a == 9
+
