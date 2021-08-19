@@ -40,14 +40,14 @@ So a sample test case looks like:
 
 ::
 
-	import pytest
+    import pytest
 	
-	@pytest.mark.railflow(author="Bob")
-	def test_sample():
-      """
-      This is a sample test
-      """
-      assert 1 == 1
+    @pytest.mark.railflow(author="Bob")
+    def test_sample():
+      	"""
+      	This is a sample test
+      	"""
+      	assert 1 == 1
       
 Run the Test
 ------------
@@ -57,7 +57,7 @@ Write the above test to a file with ``test_`` as prefix (eg: ``test_file.py``). 
 
 ::
 
-	pytest --jsonfile test_output.json test_file.py
+    pytest --jsonfile test_output.json test_file.py
 	
 Here ``test_output.json`` is the name of output json file.
 
@@ -71,32 +71,32 @@ Function level
 
 ::
 
-	import pytest
+    import pytest
 
-	@pytest.mark.railflow(author='Bob',  description='Addition of two numbers', jira_id=100231, test_path='test_calculation.py', case_fields="filedA1", result_fields="fieldB1", id_mappings="map id1", case_type="test case", case_priority="important")
-	def test_add():
-		  """
-		  Add two numbers
-		  """
-		  a = 2 + 7
-		  assert a == 9
+    @pytest.mark.railflow(author='Bob',  description='Addition of two numbers', jira_id=100231, test_path='test_calculation.py', case_fields="filedA1", result_fields="fieldB1", id_mappings="map id1", case_type="test case", case_priority="important")
+    def test_add():
+	"""
+	Add two numbers
+	"""
+	a = 2 + 7
+	assert a == 9
 
 2. It is also possible to define the attributes in separate markers for a single test. But the metadata should be added in reverse order as shown below:
 
 ::
 
-	import pytest
+    import pytest
 
-	@pytest.mark.railflow(case_priority="normal")
-	@pytest.mark.railflow(case_type="test case")
-	@pytest.mark.railflow(id_mappings="map id2")
-	@pytest.mark.railflow(result_fields="fieldB2")
-	@pytest.mark.railflow(case_fields="filedA2")
-	@pytest.mark.railflow(test_path='test_calculation.py')
-	@pytest.mark.railflow(jira_id=100241)
-	@pytest.mark.railflow(description='modulus of two numbers')
-	@pytest.mark.railflow(author='Bob123')
-	def test_add():
+    @pytest.mark.railflow(case_priority="normal")
+    @pytest.mark.railflow(case_type="test case")
+    @pytest.mark.railflow(id_mappings="map id2")
+    @pytest.mark.railflow(result_fields="fieldB2")
+    @pytest.mark.railflow(case_fields="filedA2")
+    @pytest.mark.railflow(test_path='test_calculation.py')
+    @pytest.mark.railflow(jira_id=100241)
+    @pytest.mark.railflow(description='modulus of two numbers')
+    @pytest.mark.railflow(author='Bob123')
+    def test_add():
         """
         Add two numbers
         """
