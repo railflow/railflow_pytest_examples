@@ -9,16 +9,16 @@ import pytest
     test_path="manipulation.py",
     case_type="Normal tests",
     case_priority="Important",
-    assign=["user1@gmail.com, user2@gmail.com"],
+    smart_assign=["user1@gmail.com, user2@gmail.com"],
 )
 class TestClass:
+
     def test_add(self):
         a = 3
         b = 2
         c = a + b
         assert c == 5
 
-    @pytest.mark.xfail
     def test_subtract(self):
         a = 3
         b = 2
@@ -26,13 +26,13 @@ class TestClass:
         assert c == 0
 
     @pytest.mark.railflow(
-        author="Alice",
+        testrail_user="Alice",
         description="Division of two numbers",
         jira_id=100334,
         test_path="test_manipulation.py",
         case_fields="fieldZ1",
         result_fields="fieldZ2",
-        id_mappings="map id2",
+        test_mappings="map id2",
         case_type="test case",
         case_priority="important",
     )
