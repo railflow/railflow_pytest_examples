@@ -160,8 +160,30 @@ The JSON output of above file will look like this:
         """
         a = 2 + 7
         assert a == 9
-        
-        
+
+Class Level
+-----------
+
+Class level marker attributes are different from function level markers. If the `railflow` marker is defined in function level within a class, it will override the class level marker. Class level definition of `railflow` marker is given below:
+
+    @pytest.mark.railflow(
+    testrail_user="Nulli",
+    testrail_project="Mathematics",
+    case_fields="field",
+    result_fields="output",
+    test_path="manipulation.py",
+    case_type="Normal tests",
+    case_priority="Important",
+    smart_assign=["user1@gmail.com, user2@gmail.com"],
+    )
+    class TestClass:
+
+        def test_add(self):
+            a = 3
+            b = 2
+            c = a + b
+            assert c == 5
+   
 Usage with Pytest-splinter
 ==========================
 
