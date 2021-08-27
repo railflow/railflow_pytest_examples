@@ -184,7 +184,7 @@ Class level marker attributes are different from function level markers. If the 
             c = a + b
             assert c == 5
    
-Usage with Pytest-splinter
+Usage with pytest-splinter
 ==========================
 
 pytest-railflow-testrail-reporter supports the [pytest-splinter](https://github.com/pytest-dev/pytest-splinter) plugin and thus includes the screenshot path in the JSON file if the test fails.
