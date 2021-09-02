@@ -1,13 +1,10 @@
 [
     {
         "railflow_test_attributes": {
-            "testrail_user": "Splint tester",
-            "description": "google test search",
-            "jira_id": 301219,
-            "test_path": "test_browser.py",
+            "jira_ids": 301219,
             "case_fields": "field_splint",
             "result_fields": "field_B2",
-            "test_mappings": "map id2",
+            "testrail_ids": "map id2",
             "case_type": "test browser splinter",
             "case_priority": "important"
         },
@@ -16,21 +13,18 @@
         "details": "Test using real browser.",
         "markers": "",
         "result": "FAILED",
-        "duration": 33.13596831198083,
-        "timestamp": "2021-08-27T07:50:55",
-        "message": "browser = <splinter.driver.webdriver.firefox.WebDriver object at 0x7ff5acea6f10>\n\n    @pytest.mark.railflow(\n        testrail_user=\"Splint tester\",\n        description=\"google test search\",\n        jira_id=301219,\n        test_path=\"test_browser.py\",\n        case_fields=\"field_splint\",\n        result_fields=\"field_B2\",\n        test_mappings=\"map id2\",\n        case_type=\"test browser splinter\",\n        case_priority=\"important\"\n    )\n    def test_google(browser):\n        \"\"\"Test using real browser.\"\"\"\n        url = \"https://www.google.com\"\n        browser.visit(url)\n        browser.fill('q', 'splinter - python acceptance testing for web applications')\n        # Find and click the 'search' button\n        button = browser.find_by_name('btnK')\n        # Interact with elements\n        button.click()\n>       assert browser.is_text_present('splinter.cobrateam.info'), \"splinter.cobrateam.info wasn't found... We need to\"\nE       AssertionError: splinter.cobrateam.info wasn't found... We need to\nE       assert False\nE        +  where False = <bound method BaseWebDriver.is_text_present of <splinter.driver.webdriver.firefox.WebDriver object at 0x7ff5acea6f10>>('splinter.cobrateam.info')\nE        +    where <bound method BaseWebDriver.is_text_present of <splinter.driver.webdriver.firefox.WebDriver object at 0x7ff5acea6f10>> = <splinter.driver.webdriver.firefox.WebDriver object at 0x7ff5acea6f10>.is_text_present\n\ntest_browser.py:23: AssertionError",
+        "duration": 10.558363170999655,
+        "timestamp": "2021-09-02T09:32:25",
+        "message": "browser = <splinter.driver.webdriver.firefox.WebDriver object at 0x7fe56805e880>\n\n    @pytest.mark.railflow(\n        jira_ids=301219,\n        case_fields=\"field_splint\",\n        result_fields=\"field_B2\",\n        testrail_ids=\"map id2\",\n        case_type=\"test browser splinter\",\n        case_priority=\"important\"\n    )\n    def test_google(browser):\n        \"\"\"Test using real browser.\"\"\"\n        url = \"https://www.google.com\"\n        browser.visit(url)\n        browser.fill('q', 'splinter - python acceptance testing for web applications')\n        # Find and click the 'search' button\n        button = browser.find_by_name('btnK')\n        # Interact with elements\n        button.click()\n>       assert browser.is_text_present('splinter.cobrateam.info'), \"splinter.cobrateam.info wasn't found... We need to\"\nE       AssertionError: splinter.cobrateam.info wasn't found... We need to\nE       assert False\nE        +  where False = <bound method BaseWebDriver.is_text_present of <splinter.driver.webdriver.firefox.WebDriver object at 0x7fe56805e880>>('splinter.cobrateam.info')\nE        +    where <bound method BaseWebDriver.is_text_present of <splinter.driver.webdriver.firefox.WebDriver object at 0x7fe56805e880>> = <splinter.driver.webdriver.firefox.WebDriver object at 0x7fe56805e880>.is_text_present\n\ntest_browser.py:20: AssertionError",
         "file_name": "test_browser",
-        "splinter_screenshot_dir": " /home/user/railflow/railflow_pytest_examples/test_browser/test_google-browser.png"
+        "splinter_screenshot_dir": " /media/athul/data/Job/git-repos/railflow/athul_git/railflow_pytest_examples/test_browser/test_google-browser.png"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Bob",
-            "description": "Addition of two numbers",
-            "jira_id": 100231,
-            "test_path": "test_calculation.py",
+            "jira_ids": 100231,
             "case_fields": "filedA1",
             "result_fields": "fieldB1",
-            "test_mappings": "map id1",
+            "testrail_ids": "map id1",
             "case_type": "test case",
             "case_priority": "important"
         },
@@ -39,20 +33,17 @@
         "details": "Test details are given here.",
         "markers": "",
         "result": "PASSED",
-        "duration": 0.0006303469999693334,
-        "timestamp": "2021-08-27T07:50:55",
+        "duration": 0.0002938090001407545,
+        "timestamp": "2021-09-02T09:32:25",
         "message": null,
         "file_name": "test_calculation"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Bob123",
-            "description": "modulus of two numbers",
-            "jira_id": 100241,
-            "test_path": "test_calculation.py",
+            "jira_ids": 100241,
             "case_fields": "filedA2",
             "result_fields": "fieldB2",
-            "test_mappings": "map id2",
+            "testrail_ids": "map id2",
             "case_type": "test case",
             "case_priority": "normal"
         },
@@ -61,21 +52,18 @@
         "details": null,
         "markers": "",
         "result": "FAILED",
-        "duration": 0.0003219170030206442,
-        "timestamp": "2021-08-27T07:50:55",
-        "message": "@pytest.mark.railflow(case_priority=\"normal\")\n    @pytest.mark.railflow(case_type=\"test case\")\n    @pytest.mark.railflow(test_mappings=\"map id2\")\n    @pytest.mark.railflow(result_fields=\"fieldB2\")\n    @pytest.mark.railflow(case_fields=\"filedA2\")\n    @pytest.mark.railflow(test_path=\"test_calculation.py\")\n    @pytest.mark.railflow(jira_id=100241)\n    @pytest.mark.railflow(description=\"modulus of two numbers\")\n    @pytest.mark.railflow(testrail_user=\"Bob123\")\n    def test_modulus():\n        a = 3\n        b = 2\n        c = a % b\n>       assert c == 0\nE       assert 1 == 0\n\ntest_calculation.py:38: AssertionError",
+        "duration": 0.0005657139990944415,
+        "timestamp": "2021-09-02T09:32:25",
+        "message": "@pytest.mark.railflow(case_priority=\"normal\")\n    @pytest.mark.railflow(case_type=\"test case\")\n    @pytest.mark.railflow(testrail_ids=\"map id2\")\n    @pytest.mark.railflow(result_fields=\"fieldB2\")\n    @pytest.mark.railflow(case_fields=\"filedA2\")\n    @pytest.mark.railflow(jira_ids=100241)\n    def test_modulus():\n        a = 3\n        b = 2\n        c = a % b\n>       assert c == 0\nE       assert 1 == 0\n\ntest_calculation.py:32: AssertionError",
         "file_name": "test_calculation"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Nulli",
-            "testrail_project": "Mathematics",
             "case_fields": "field",
             "result_fields": "output",
-            "test_path": "manipulation.py",
             "case_type": "Normal tests",
             "case_priority": "Important",
-            "smart_assign": [
+            "smart_assignment": [
                 "user1@gmail.com, user2@gmail.com"
             ]
         },
@@ -84,21 +72,18 @@
         "details": null,
         "markers": "",
         "result": "PASSED",
-        "duration": 0.00030430499464273453,
-        "timestamp": "2021-08-27T07:50:55",
+        "duration": 0.0001716250008030329,
+        "timestamp": "2021-09-02T09:32:25",
         "message": null,
         "file_name": "test_manipulation"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Nulli",
-            "testrail_project": "Mathematics",
             "case_fields": "field",
             "result_fields": "output",
-            "test_path": "manipulation.py",
             "case_type": "Normal tests",
             "case_priority": "Important",
-            "smart_assign": [
+            "smart_assignment": [
                 "user1@gmail.com, user2@gmail.com"
             ]
         },
@@ -107,24 +92,20 @@
         "details": null,
         "markers": "",
         "result": "FAILED",
-        "duration": 0.00034749298356473446,
-        "timestamp": "2021-08-27T07:50:55",
-        "message": "self = <test_manipulation.TestClass object at 0x7ff5acea38b0>\n\n    def test_subtract(self):\n        a = 3\n        b = 2\n        c = a - b\n>       assert c == 0\nE       assert 1 == 0\n\ntest_manipulation.py:26: AssertionError",
+        "duration": 0.00026424300085636787,
+        "timestamp": "2021-09-02T09:32:25",
+        "message": "self = <test_manipulation.TestClass object at 0x7fe567fcfa30>\n\n    def test_subtract(self):\n        a = 3\n        b = 2\n        c = a - b\n>       assert c == 0\nE       assert 1 == 0\n\ntest_manipulation.py:23: AssertionError",
         "file_name": "test_manipulation"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Nulli",
-            "description": "Division of two numbers",
-            "jira_id": 100334,
-            "test_path": "manipulation.py",
+            "jira_ids": 100334,
             "case_fields": "field",
             "result_fields": "output",
-            "test_mappings": "map id2",
+            "testrail_ids": "map id2",
             "case_type": "Normal tests",
             "case_priority": "Important",
-            "testrail_project": "Mathematics",
-            "smart_assign": [
+            "smart_assignment": [
                 "user1@gmail.com, user2@gmail.com"
             ]
         },
@@ -133,24 +114,20 @@
         "details": null,
         "markers": "parametrize",
         "result": "PASSED",
-        "duration": 0.00021351902978494763,
-        "timestamp": "2021-08-27T07:50:55",
+        "duration": 0.00025754000307642855,
+        "timestamp": "2021-09-02T09:32:25",
         "message": null,
         "file_name": "test_manipulation"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Nulli",
-            "description": "Division of two numbers",
-            "jira_id": 100334,
-            "test_path": "manipulation.py",
+            "jira_ids": 100334,
             "case_fields": "field",
             "result_fields": "output",
-            "test_mappings": "map id2",
+            "testrail_ids": "map id2",
             "case_type": "Normal tests",
             "case_priority": "Important",
-            "testrail_project": "Mathematics",
-            "smart_assign": [
+            "smart_assignment": [
                 "user1@gmail.com, user2@gmail.com"
             ]
         },
@@ -159,24 +136,20 @@
         "details": null,
         "markers": "parametrize",
         "result": "PASSED",
-        "duration": 0.00021342001855373383,
-        "timestamp": "2021-08-27T07:50:55",
+        "duration": 0.00024183300047297962,
+        "timestamp": "2021-09-02T09:32:25",
         "message": null,
         "file_name": "test_manipulation"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Nulli",
-            "description": "Division of two numbers",
-            "jira_id": 100334,
-            "test_path": "manipulation.py",
+            "jira_ids": 100334,
             "case_fields": "field",
             "result_fields": "output",
-            "test_mappings": "map id2",
+            "testrail_ids": "map id2",
             "case_type": "Normal tests",
             "case_priority": "Important",
-            "testrail_project": "Mathematics",
-            "smart_assign": [
+            "smart_assignment": [
                 "user1@gmail.com, user2@gmail.com"
             ]
         },
@@ -185,8 +158,8 @@
         "details": null,
         "markers": "parametrize",
         "result": "PASSED",
-        "duration": 0.0002689080429263413,
-        "timestamp": "2021-08-27T07:50:55",
+        "duration": 0.00020557600146275945,
+        "timestamp": "2021-09-02T09:32:25",
         "message": null,
         "file_name": "test_manipulation"
     },
@@ -197,20 +170,17 @@
         "details": null,
         "markers": "",
         "result": "PASSED",
-        "duration": 0.0001744249602779746,
-        "timestamp": "2021-08-27T07:50:55",
+        "duration": 0.0001766400018823333,
+        "timestamp": "2021-09-02T09:32:25",
         "message": null,
         "file_name": "test_nothing"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Splint",
-            "description": "Visit Url",
-            "jira_id": 100211,
-            "test_path": "test_splinter.py",
+            "jira_ids": 100211,
             "case_fields": "field_splint",
             "result_fields": "field_B1",
-            "test_mappings": "map id1",
+            "testrail_ids": "map id1",
             "case_type": "test browser",
             "case_priority": "important"
         },
@@ -219,20 +189,17 @@
         "details": "Testing visiting url",
         "markers": "",
         "result": "PASSED",
-        "duration": 4.218067487992812,
-        "timestamp": "2021-08-27T07:51:00",
+        "duration": 1.5830202359975374,
+        "timestamp": "2021-09-02T09:32:26",
         "message": null,
         "file_name": "test_splinter"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Splint",
-            "description": "forward URL",
-            "jira_id": 100212,
-            "test_path": "test_splinter.py",
+            "jira_ids": 100212,
             "case_fields": "field_splint",
             "result_fields": "field_B2",
-            "test_mappings": "map id2",
+            "testrail_ids": "map id2",
             "case_type": "test browser splinter",
             "case_priority": "important"
         },
@@ -241,20 +208,17 @@
         "details": "testing forward and backward in browser",
         "markers": "",
         "result": "PASSED",
-        "duration": 18.859948413970415,
-        "timestamp": "2021-08-27T07:51:19",
+        "duration": 6.150426063002669,
+        "timestamp": "2021-09-02T09:32:33",
         "message": null,
         "file_name": "test_splinter"
     },
     {
         "railflow_test_attributes": {
-            "testrail_user": "Splint User",
-            "description": "Reload URL",
-            "jira_id": 100414,
-            "test_path": "test_splinter.py",
+            "jira_ids": 100414,
             "case_fields": "field_splint reload",
             "result_fields": "field_B3",
-            "test_mappings": "map id4",
+            "testrail_ids": "map id4",
             "case_type": "test browser splinter",
             "case_priority": "important"
         },
@@ -263,10 +227,10 @@
         "details": "test reload page",
         "markers": "",
         "result": "FAILED",
-        "duration": 15.409652512986213,
-        "timestamp": "2021-08-27T07:51:34",
-        "message": "browser = <splinter.driver.webdriver.firefox.WebDriver object at 0x7ff5acea6f10>\n\n    @pytest.mark.railflow(\n        testrail_user=\"Splint User\",\n        description=\"Reload URL\",\n        jira_id=100414,\n        test_path=\"test_splinter.py\",\n        case_fields=\"field_splint reload\",\n        result_fields=\"field_B3\",\n        test_mappings=\"map id4\",\n        case_type=\"test browser splinter\",\n        case_priority=\"important\"\n        )\n    def test_reload(browser):\n        \"test reload page\"\n        url = \"https://www.duckduckgo.com\"\n        browser.visit(url)\n        browser.reload()\n>       assert browser.url == 'https://www.google.com'\nE       AssertionError: assert 'https://duckduckgo.com/' == 'https://www.google.com'\nE         - https://www.google.com\nE         + https://duckduckgo.com/\n\ntest_splinter.py:57: AssertionError",
+        "duration": 2.566374588001054,
+        "timestamp": "2021-09-02T09:32:35",
+        "message": "browser = <splinter.driver.webdriver.firefox.WebDriver object at 0x7fe56805e880>\n\n    @pytest.mark.railflow(\n        jira_ids=100414,\n        case_fields=\"field_splint reload\",\n        result_fields=\"field_B3\",\n        testrail_ids=\"map id4\",\n        case_type=\"test browser splinter\",\n        case_priority=\"important\"\n        )\n    def test_reload(browser):\n        \"test reload page\"\n        url = \"https://www.duckduckgo.com\"\n        browser.visit(url)\n        browser.reload()\n>       assert browser.url == 'https://www.google.com'\nE       AssertionError: assert 'https://duckduckgo.com/' == 'https://www.google.com'\nE         - https://www.google.com\nE         + https://duckduckgo.com/\n\ntest_splinter.py:48: AssertionError",
         "file_name": "test_splinter",
-        "splinter_screenshot_dir": " /home/user/railflow/railflow_pytest_examples/test_splinter/test_reload-browser.png"
+        "splinter_screenshot_dir": " /media/athul/data/Job/git-repos/railflow/athul_git/railflow_pytest_examples/test_splinter/test_reload-browser.png"
     }
 ]

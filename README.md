@@ -21,14 +21,11 @@ metadata attributes will be rejected with a warning.
 
   Function level Attributes | Class level Attributes
   --------------------------|-----------------------
-  testrail\_user | testrail\_user
-  description | testrail\_project
-  jira\_id | case\_fields
-  test\_path | result\_fields
-  case\_fields | test\_path
+  jira\_ids | case\_fields
+  case\_fields | result\_fields
   result\_fields | case\_type
-  test\_mappings | case\_priority
-  case\_type | smart\_assign
+  testrail\_ids | case\_priority
+  case\_type | smart\_assignment
   case\_priority | 
 
 The attributes should be defined in the markers with marker name
@@ -38,7 +35,7 @@ So a sample test case looks like:
 
     import pytest
 
-    @pytest.mark.railflow(testrail_user="Bob")
+    @pytest.mark.railflow(testrail_ids=121131)
     def test_sample():
         """
         This is a sample test
@@ -65,7 +62,7 @@ The output of above `test_file.py` is stored in `test_output.json` file which is
     [
         {
             "railflow_test_attributes": {
-                "testrail_user": "Bob"
+                "testrail_ids": 121131
             },
             "class_name": null,
             "test_name": "test_sample",
@@ -94,13 +91,10 @@ Function level
     import pytest
 
     @pytest.mark.railflow(
-    testrail_user="Bob",
-    description="Addition of two numbers",
-    jira_id=100231,
-    test_path="test_calculation.py",
+    jira_ids=100231,
     case_fields="filedA1",
     result_fields="fieldB1",
-    test_mappings="map id1",
+    testrail_ids="map id1",
     case_type="test case",
     case_priority="important"
     )  
@@ -115,14 +109,11 @@ Function level
 The JSON output of above file will look like this:
 
     {
-        "railflow_test_attributes": {
-            "testrail_user": "Bob",
-            "description": "Addition of two numbers",
-            "jira_id": 100231,
-            "test_path": "test_calculation.py",
+       "railflow_test_attributes": {
+            "jira_ids": 100231,
             "case_fields": "filedA1",
             "result_fields": "fieldB1",
-            "test_mappings": "map id1",
+            "testrail_ids": "map id1",
             "case_type": "test case",
             "case_priority": "important"
         },
@@ -147,14 +138,10 @@ The JSON output of above file will look like this:
 
     @pytest.mark.railflow(case_priority="normal")
     @pytest.mark.railflow(case_type="test case")
-    @pytest.mark.railflow(test_mappings="map id2")
+    @pytest.mark.railflow(testrail_ids="map id2")
     @pytest.mark.railflow(result_fields="fieldB2")
     @pytest.mark.railflow(case_fields="filedA2")
-    @pytest.mark.railflow(test_path='test_calculation.py')
-    @pytest.mark.railflow(jira_id=100241)
-    @pytest.mark.railflow(description='modulus of two numbers')
-    @pytest.mark.railflow(testrail_user='Bob123')
-    def test_add():
+    @pytest.mark.railflow(jira_ids=100241)
         """
         Add two numbers
         """
@@ -167,14 +154,11 @@ Class Level
 Class level marker attributes are different from function level markers. If the `railflow` marker is defined in function level within a class, it will override the class level marker. Class level definition of `railflow` marker is given below:
 
     @pytest.mark.railflow(
-    testrail_user="Nulli",
-    testrail_project="Mathematics",
     case_fields="field",
     result_fields="output",
-    test_path="manipulation.py",
     case_type="Normal tests",
     case_priority="Important",
-    smart_assign=["user1@gmail.com, user2@gmail.com"],
+    smart_assignment=["user1@gmail.com, user2@gmail.com"],
     )
     class TestClass:
 
@@ -192,13 +176,10 @@ pytest-railflow-testrail-reporter supports the [pytest-splinter](https://github.
 We can write a test case, for example, visit a url, reload it and check if the url is same as given below:
 
     @pytest.mark.railflow(
-    testrail_user="Splint User",
-    description="Reload URL",
-    jira_id=100414,
-    test_path="test_splinter.py",
+    jira_ids=100414,
     case_fields="field_splint reload",
     result_fields="field_B3",
-    test_mappings="map id4",
+    testrail_ids="map id4",
     case_type="test browser splinter",
     case_priority="important"
     )
@@ -215,24 +196,21 @@ So the JSON output will be as follows:
 
     {
         "railflow_test_attributes": {
-            "testrail_user": "Splint User",
-            "description": "Reload URL",
-            "jira_id": 100414,
-            "test_path": "test_splinter.py",
+            "jira_ids": 100414,
             "case_fields": "field_splint reload",
             "result_fields": "field_B3",
-            "test_mappings": "map id4",
+            "testrail_ids": "map id4",
             "case_type": "test browser splinter",
             "case_priority": "important"
         },
-        "class_name": null,
+                "class_name": null,
         "test_name": "test_reload",
         "details": "test reload page",
         "markers": "",
         "result": "FAILED",
-        "duration": 6.008049393014517,
-        "timestamp": "2021-08-27T07:35:48",
-        "message": "browser = <splinter.driver.webdriver.firefox.WebDriver object at 0x7fb936381670>\n\n    @pytest.mark.railflow(\n        testrail_user=\"Splint User\",\n        description=\"Reload URL\",\n        jira_id=100414,\n        test_path=\"test_splinter.py\",\n        case_fields=\"field_splint reload\",\n        result_fields=\"field_B3\",\n        test_mappings=\"map id4\",\n        case_type=\"test browser splinter\",\n        case_priority=\"important\"\n        )\n    def test_reload(browser):\n        \"test reload page\"\n        url = \"https://www.duckduckgo.com\"\n        browser.visit(url)\n        browser.reload()\n>       assert browser.url == 'https://www.google.com'\nE       AssertionError: assert 'https://duckduckgo.com/' == 'https://www.google.com'\nE         - https://www.google.com\nE         + https://duckduckgo.com/\n\ntest_splinter.py:57: AssertionError",
+        "duration": 2.566374588001054,
+        "timestamp": "2021-09-02T09:32:35",
+        "message": "browser = <splinter.driver.webdriver.firefox.WebDriver object at 0x7fe56805e880>\n\n    @pytest.mark.railflow(\n        jira_ids=100414,\n        case_fields=\"field_splint reload\",\n        result_fields=\"field_B3\",\n        testrail_ids=\"map id4\",\n        case_type=\"test browser splinter\",\n        case_priority=\"important\"\n        )\n    def test_reload(browser):\n        \"test reload page\"\n        url = \"https://www.duckduckgo.com\"\n        browser.visit(url)\n        browser.reload()\n>       assert browser.url == 'https://www.google.com'\nE       AssertionError: assert 'https://duckduckgo.com/' == 'https://www.google.com'\nE         - https://www.google.com\nE         + https://duckduckgo.com/\n\ntest_splinter.py:48: AssertionError",
         "file_name": "test_splinter",
         "splinter_screenshot_dir": " /home/user/railflow/railflow_pytest_examples/test_splinter/test_reload-browser.png"
     }

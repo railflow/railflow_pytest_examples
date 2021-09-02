@@ -1,13 +1,10 @@
 import pytest
  
 @pytest.mark.railflow(
-    testrail_user="Splint",
-    description="Visit Url",
-    jira_id=100211,
-    test_path="test_splinter.py",
+    jira_ids=100211,
     case_fields="field_splint",
     result_fields="field_B1",
-    test_mappings="map id1",
+    testrail_ids="map id1",
     case_type="test browser",
     case_priority="important"
     )
@@ -19,13 +16,10 @@ def test_google(browser):
        
         
 @pytest.mark.railflow(
-    testrail_user="Splint",
-    description="forward URL",
-    jira_id=100212,
-    test_path="test_splinter.py",
+    jira_ids=100212,
     case_fields="field_splint",
     result_fields="field_B2",
-    test_mappings="map id2",
+    testrail_ids="map id2",
     case_type="test browser splinter",
     case_priority="important"
     )
@@ -39,13 +33,10 @@ def test_forward(browser):
     assert splint_url in browser.url
     
 @pytest.mark.railflow(
-    testrail_user="Splint User",
-    description="Reload URL",
-    jira_id=100414,
-    test_path="test_splinter.py",
+    jira_ids=100414,
     case_fields="field_splint reload",
     result_fields="field_B3",
-    test_mappings="map id4",
+    testrail_ids="map id4",
     case_type="test browser splinter",
     case_priority="important"
     )
