@@ -2,14 +2,11 @@ import pytest
 
 
 @pytest.mark.railflow(
-    testrail_user="Nulli",
-    testrail_project="Mathematics",
     case_fields="field",
     result_fields="output",
-    test_path="manipulation.py",
     case_type="Normal tests",
     case_priority="Important",
-    smart_assign=["user1@gmail.com, user2@gmail.com"],
+    smart_assignment=["user1@gmail.com, user2@gmail.com"],
 )
 class TestClass:
 
@@ -26,13 +23,10 @@ class TestClass:
         assert c == 0
 
     @pytest.mark.railflow(
-        testrail_user="Alice",
-        description="Division of two numbers",
-        jira_id=100334,
-        test_path="test_manipulation.py",
+        jira_ids=100334,
         case_fields="fieldZ1",
         result_fields="fieldZ2",
-        test_mappings="map id2",
+        testrail_ids="map id2",
         case_type="test case",
         case_priority="important",
     )
