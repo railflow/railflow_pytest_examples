@@ -217,3 +217,24 @@ So the JSON output will be as follows:
 
 More test cases can be found in the repository itself. A JSON file output of all tests and splinter screenshot files of failed tests can also be found here.
 
+Create Virtual Environment with Python and run the tests
+========================================================
+
+1. Open terminal/command prompt in desired folder. Run the command:
+    
+       python3 -m venv <environment name>
+    
+2. A folder with environment name appears there. Now activate the environment using the following command:
+
+       source <environment name>/bin/activate
+    
+3. Now you can see the environment name in the terminal. To run the tests, we have to install necessary packages in the virtual environment. To install pytest-raiflow-testrail-reporter, run:
+
+       pip install pytest-railflow-testrail-reporter
+    
+4. For pytest-splinter, run:
+
+       pip install pytest-splinter
+    
+Now create the test file in the folder and run the tests.
+    
