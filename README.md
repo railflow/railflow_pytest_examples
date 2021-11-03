@@ -228,7 +228,7 @@ Create Virtual Environment with Python and run the tests
 
        source <environment name>/bin/activate
     
-3. Now you can see the environment name in the terminal. To run the tests, we have to install necessary packages in the virtual environment. To install pytest-raiflow-testrail-reporter, run:
+3. Now you can see the environment name in the terminal. To run the tests, we have to install necessary packages in the virtual environment. To install pytest-railflow-testrail-reporter, run:
 
        pip install pytest-railflow-testrail-reporter
     
