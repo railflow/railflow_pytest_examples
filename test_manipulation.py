@@ -24,11 +24,11 @@ class TestClass:
 
     @pytest.mark.railflow(
         jira_ids=100334,
-        case_fields="fieldZ1",
-        result_fields="fieldZ2",
-        testrail_ids="map id2",
-        case_type="test case",
-        case_priority="important",
+        case_fields="function fields",
+        result_fields="function result fields",
+        testrail_ids=[1234, 213],
+        case_type="function type",
+        case_priority="function priority"
     )
     @pytest.mark.parametrize("a,b,c", [(22, 11, 2), (64, 8, 8), (9, 3, 3)])
     def test_divide(self, a, b, c):
