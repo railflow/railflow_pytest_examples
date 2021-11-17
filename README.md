@@ -173,6 +173,15 @@ Usage with pytest-splinter
 
 pytest-railflow-testrail-reporter supports the [pytest-splinter](https://github.com/pytest-dev/pytest-splinter) plugin and thus includes the screenshot path in the JSON file if the test fails.
 
+To install pytest-splinter, run:
+
+       pip install pytest-splinter
+       
+Also, make sure that chromedriver or [Firefox driver](https://github.com/mozilla/geckodriver/releases) is installed in your system for running splinter.
+
+For Firefox driver: [Splinter Documentation on Firefox Driver](https://splinter.readthedocs.io/en/latest/drivers/firefox.html)
+For Chrome driver : [SPlinter Documentation on Chrome Driver](https://splinter.readthedocs.io/en/latest/drivers/chrome.html)
+
 We can write a test case, for example, visit a url, reload it and check if the url is same as given below:
 
     @pytest.mark.railflow(
