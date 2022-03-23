@@ -2,12 +2,11 @@ import pytest
 
 
 @pytest.mark.railflow(
-    jira_ids=100231,
-    case_fields="filedA1",
-    result_fields="fieldB1",
-    testrail_ids="map id1",
-    case_type="test case",
-    case_priority="important"
+    jira_ids=["100231"],
+    case_fields=[{'name':'required text field', 'value': 'test_power'}],
+    result_fields=[{'name':'custom field','value':'test_power_cr'}],
+    case_type="Acceptance",
+    case_priority="High"
     )  
 def test_power():
     """
@@ -19,12 +18,11 @@ def test_power():
     assert c == 9
 
 
-@pytest.mark.railflow(case_priority="normal")
-@pytest.mark.railflow(case_type="test case")
-@pytest.mark.railflow(testrail_ids="map id2")
-@pytest.mark.railflow(result_fields="fieldB2")
-@pytest.mark.railflow(case_fields="filedA2")
-@pytest.mark.railflow(jira_ids=100241)
+@pytest.mark.railflow(case_priority="Low")
+@pytest.mark.railflow(case_type="Security")
+@pytest.mark.railflow(case_fields=[{'name':'required text field', 'value': 'test_power'}])
+@pytest.mark.railflow(result_fields=[{'name':'custom_result','value':'test_power_cr'}])
+@pytest.mark.railflow(jira_ids=["id1","id2"])
 def test_modulus():
     a = 3
     b = 2
