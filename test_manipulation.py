@@ -1,12 +1,22 @@
 import pytest
 
 
+def test_power_in_manipulation():
+    """
+    Test details are given here.
+    """
+    a = 3
+    b = 2
+    c = a ** b
+    assert c == 9
+
+
 @pytest.mark.railflow(
-    case_fields="field",
-    result_fields="output",
-    case_type="Normal tests",
-    case_priority="Important",
-    smart_assignment=["user1@gmail.com, user2@gmail.com"],
+    jira_ids=["100231"],
+    case_fields=[{'name':'required text field', 'value': 'test_power_in_manipulation'}],
+    result_fields=[{'name':'custom field','value':'test_power_in_manipulation_cr'}],
+    case_type="Acceptance",
+    case_priority="High"
 )
 class TestClass:
 
@@ -22,14 +32,11 @@ class TestClass:
         c = a - b
         assert c == 0
 
-    @pytest.mark.railflow(
-        jira_ids=100334,
-        case_fields="function fields",
-        result_fields="function result fields",
-        testrail_ids=[1234, 213],
-        case_type="function type",
-        case_priority="function priority"
-    )
-    @pytest.mark.parametrize("a,b,c", [(22, 11, 2), (64, 8, 8), (9, 3, 3)])
+    @pytest.mark.parametrize("a,b,c", [(22, 11, 2), (64, 8, 9), (9, 3, 2)])
     def test_divide(self, a, b, c):
+        assert a / b == c
+
+    @pytest.mark.railflow(testrail_ids=[23702, 23703])
+    @pytest.mark.parametrize("a,b,c", [(22, 11, 2), (64, 8, 8), (9, 3, 4)])
+    def test_divide_for_mapping(self, a, b, c):
         assert a / b == c
